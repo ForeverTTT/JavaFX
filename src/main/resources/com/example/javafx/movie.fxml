@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.MovieController">
+   <children>
+      <SplitPane dividerPositions="0.9234949832775922" orientation="VERTICAL" prefHeight="807.0" prefWidth="1280.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="735.0" prefWidth="1278.0">
+               <children>
+                  <SplitPane dividerPositions="0.13594890510948907" orientation="VERTICAL" prefHeight="733.0" prefWidth="1278.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="107.0" prefWidth="1276.0" style="-fx-background-color: black;">
+                           <children>
+                              <ImageView fitHeight="130.0" fitWidth="1276.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@movies/moviehead.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="1276.0">
+                           <children>
+                              <ImageView fitHeight="725.0" fitWidth="1391.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@entertainmentsystem/background.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="movie1" layoutX="240.0" layoutY="101.0" mnemonicParsing="false" onAction="#movie1show" prefHeight="158.0" prefWidth="41.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@movies/1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="movie2" layoutX="469.0" layoutY="101.0" mnemonicParsing="false" onAction="#movie2show" prefHeight="158.0" prefWidth="41.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@movies/2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="movie3" layoutX="696.0" layoutY="101.0" mnemonicParsing="false" onAction="#movie3show" prefHeight="158.0" prefWidth="41.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@movies/3.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="movie4" layoutX="928.0" layoutY="101.0" mnemonicParsing="false" onAction="#movie4show" prefHeight="158.0" prefWidth="41.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@movies/4.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="movie5" layoutX="240.0" layoutY="366.0" mnemonicParsing="false" onAction="#movie5show" prefHeight="158.0" prefWidth="41.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@movies/5.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="movie6" layoutX="470.0" layoutY="366.0" mnemonicParsing="false" onAction="#movie6show" prefHeight="158.0" prefWidth="41.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@movies/6.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="movie7" layoutX="696.0" layoutY="366.0" mnemonicParsing="false" onAction="#movie7show" prefHeight="158.0" prefWidth="41.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@movies/7.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="movie8" layoutX="928.0" layoutY="366.0" mnemonicParsing="false" onAction="#movie8show" prefHeight="158.0" prefWidth="41.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@movies/8.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="54.0" prefWidth="1278.0" style="-fx-background-color: grey;">
+               <children>
+                  <Button fx:id="toMainPage" layoutX="1053.0" layoutY="17.0" mnemonicParsing="false" onAction="#toMainPageClick" text="Back to the Entertainment System" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>
