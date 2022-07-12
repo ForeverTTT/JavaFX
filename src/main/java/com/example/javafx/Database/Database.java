@@ -49,6 +49,7 @@ public class Database {
         String sql = "SELECT * FROM `flight`.`flight_info` WHERE `from` = '" + fromCity + "'";
         PreparedStatement pstmt = connection.prepareStatement(sql);
 
+
         ResultSet rs = pstmt.executeQuery();
         Flight flight = null;
         ArrayList<Flight> flightsList = new ArrayList<>();
