@@ -48,7 +48,7 @@
                 <Button fx:id="startVideo" mnemonicParsing="false" onAction="#startVideo" text="Start" />
                   <Button fx:id="stopVideo" mnemonicParsing="false" onAction="#stopVideo" text="Stop" />
                   <Button fx:id="back" mnemonicParsing="false" onAction="#back" text="&lt;&lt;" />
-                  <Slider fx:id="videoScrollBar" prefHeight="14.0" prefWidth="985.0" />
+                  <Slider fx:id="videoScrollBar" onDragDetected="#moveSlider" prefHeight="14.0" prefWidth="985.0" />
                   <Button fx:id="front" mnemonicParsing="false" onAction="#front" text="&gt;&gt;" />
                   <Button fx:id="menubutton" mnemonicParsing="false" onAction="#openMenu" text="Menu" />
                   <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closeDisplay" text="Close" />

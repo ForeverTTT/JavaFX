@@ -1,5 +1,7 @@
 package com.example.javafx;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +11,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
+import javafx.util.Duration;
 
 public class MovieDisplayController {
 
@@ -41,9 +44,17 @@ public class MovieDisplayController {
     @FXML
     private Slider videoScrollBar;
 
+    private final Duration duration=new Media("file:///D:/TUM/22SS/EIST/Team%20project/JavaFX/src/main/resources/com/example/javafx/SafetyIV/1.mp4").getDuration();
+
     @FXML
     void back(ActionEvent event) {
-
+        if(mediaPlayer.getCurrentTime().compareTo(Duration.seconds(5))<0){
+            mediaPlayer.seek(mediaPlayer.getStartTime());
+        }else{
+            mediaPlayer.seek(mediaPlayer.getCurrentTime().subtract(Duration.seconds(5)));
+        }
+        videoScrollBar.setValue(mediaPlayer.getCurrentTime().toMillis()/duration.toMillis() * 100);
+        mediaPlayer.play();
     }
 
     @FXML
@@ -59,7 +70,13 @@ public class MovieDisplayController {
 
     @FXML
     void front(ActionEvent event) {
-
+        if(mediaPlayer.getStopTime().subtract(mediaPlayer.getCurrentTime()).compareTo(Duration.seconds(5))<0){
+            mediaPlayer.seek(mediaPlayer.getStopTime());
+        }else{
+            mediaPlayer.seek(mediaPlayer.getCurrentTime().add(Duration.seconds(5)));
+        }
+        videoScrollBar.setValue(mediaPlayer.getCurrentTime().toMillis()/duration.toMillis() * 100);
+        mediaPlayer.play();
     }
 
     @FXML
@@ -87,5 +104,21 @@ public class MovieDisplayController {
         mediaPlayer.pause();
     }
 
+    @FXML
+    void moveSlider(){
+        videoScrollBar.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                if(videoScrollBar.isValueChanging()){
+                    mediaPlayer.seek(duration.multiply(videoScrollBar.getValue()/100.0));
+                }
+            }
+        });
+        Duration currentTime=mediaPlayer.getCurrentTime();
+        if(!videoScrollBar.isDisabled() && duration.greaterThan(Duration.ZERO) && !videoScrollBar.isValueChanging()){
+            videoScrollBar.setValue(currentTime.toMillis()/duration.toMillis() * 100);
+        }
+        mediaPlayer.play();
+    }
 }
 
